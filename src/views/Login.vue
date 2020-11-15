@@ -22,7 +22,7 @@
 </template>
 
 <script>
-  // import axios from 'axios'
+  import axios from 'axios'
   export default {
     name: 'Login',
     data(){
@@ -36,13 +36,13 @@
     methods:{
       async login(){ 
         /*consumir servicio login*/
-        // let json = {
-        //   cedula: this.user,
-        //   password: this.password,
-        //   tipo: this.tipo
-        // }
+        let json = {
+          cedula: this.user,
+          password: this.password,
+          tipo: this.tipo
+        }
         // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-        // axios.post('http://3.82.145.61:8080/login', json).then(data=>{console.log(data)})
+        axios.post('http://3.82.145.61:8080/login', json).then(data=>{console.log(data)})
         // axios.post('http://3.82.145.61:8080/login?cedula=105032&password=denti123*%23&tipo=admin').then(data=>{console.log(data)})
         // if(this.user==='romariojaimes@gmail.com' && this.password==='123456'){
         //   this.$router.push({ name: 'Citas' })
